@@ -1,101 +1,53 @@
-/* General styles */
 body {
-    font-family: sans-serif;
     margin: 0;
     padding: 0;
-  }
-  
-  .container {
-    max-width: 800px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f2f2f2;
+}
+
+.container {
+    width: 80%;
     margin: 0 auto;
-  }
-  
-  /* Header styles */
-  header {
-    background-color: #222;
+}
+
+.header {
+    background-color: #333;
     color: #fff;
-    padding: 10px;
-  }
-  
-  header h1 {
-    margin: 0;
-  }
-  
-  /* Upload form styles */
-  .upload-form {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .upload-form label {
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  
-  .upload-form input[type="file"] {
-    margin-bottom: 20px;
-  }
-  
-  .upload-form input[type="submit"] {
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .upload-form input[type="submit"]:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Filter buttons styles */
-  .filter-buttons {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-  }
-  
-  .filter-buttons button {
-    background-color: #007bff;
-    color: #fff;
-    font-size: 16px;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-right: 10px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .filter-buttons button:last-child {
-    margin-right: 0;
-  }
-  
-  .filter-buttons button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Filtered image styles */
-  .filtered-image {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-  }
-  
-  .filtered-image img {
-    max-width: 100%;
-    margin-bottom: 20px;
-  }
-  
-  .filtered-image h2 {
-    font-size: 18px;
-    margin: 0;
-    width: 100%;
+    padding: 20px;
     text-align: center;
-  }
-  
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 0;
+}

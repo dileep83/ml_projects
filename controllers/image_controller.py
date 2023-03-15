@@ -1,22 +1,20 @@
-from flask import Blueprint, render_template, request, make_response
-from handlers.image_handler import process_image
+from handlers.image_handler import ImageHandler
+import os
 
-image_controller = Blueprint('image_controller', __name__)
+class ImageController:
+    def __init__(self):
+        self.image_handler = ImageHandler()
 
-@image_controller.route('/')
-def index():
-    return render_template('upload.html')
+    def process_image(self, file):
+        img_array = self.image_handler.read_image(file)
+        filtered_img_array = self.image_handler.apply_filter(img_array)
+        filename = file.filename
+        key_prefix = os.path.splitext(filename)[0]
+        self.image_handler.save_image(img_array, key_prefix + '_original.jpg')
+        self.image_handler.save_image(filtered_img_array, key_prefix + '_filtered.jpg')
 
-@image_controller.route('/upload', methods=['POST'])
-def upload():
-    # Get the uploaded image file
-    image_file = request.files['image']
+    def get_original_image_url(self, key):
+        return self.image_handler.get_original_image_url(key)
 
-    # Pass the image file to the image processing handler
-    filtered_image = process_image(image_file)
-
-    # Package the filtered image as an HTTP response
-    response = make_response(filtered_image.tobytes())
-    response.headers.set('Content-Type', 'image/png')
-    response.headers.set('Content-Disposition', 'attachment', filename='filtered_image.png')
-    return response
+    def get_filtered_image_url(self, key):
+        return self.image_handler.get_filtered_image_url(key)

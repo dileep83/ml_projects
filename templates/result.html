@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Image Filter App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Image Filter App</h1>
+        </div>
+        <div class="row">
+            <div class="column">
+                <h2>Original Image</h2>
+                <img src="{{ original_image_url }}" alt="Original Image">
+            </div>
+            <div class="column">
+                <h2>Filtered Image</h2>
+                <img src="{{ filtered_image_url }}" alt="Filtered Image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
