@@ -21,4 +21,4 @@ class S3Controller:
             print('Credentials not available')
 
     def get_presigned_url(self, key):
-        return self.s3.generate_presigned_url('get_object', Params={'Bucket': self.bucket_name,
+        return self.s3.generate_presigned_url('get_object', Params={'Bucket': self.bucket_name})
